@@ -8,6 +8,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import os
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -22,6 +23,7 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -42,6 +44,7 @@ def index():
     return render_template('index.html', form=form, name=session.get('name'),
     known=session.get('known', False), current_time=datetime.utcnow())
 #the session is kept to avoid re-sent of data in case user refresh the browser
+
 
 @app.route('/user/<name>')
 def user(name):
@@ -73,7 +76,6 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
-#
 
 #import db as a dict in python autom, wo opening the shell
 @app.shell_context_processor
