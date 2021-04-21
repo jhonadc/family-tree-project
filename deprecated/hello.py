@@ -1,14 +1,18 @@
 
+from flask_mail import Message
 from flask import Flask, render_template, session, redirect, url_for, flash
+import os
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
-import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_mail import Mail
+from flask_mail import Message
+from threading import Thredd
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -20,12 +24,31 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #The next key if for WTF
 app.config['SECRET_KEY'] = 'hard to guess string'
 
+#email config
+app.config['FLASKY_ADMIN'] = os.environ.get('FLASKY_ADMIN')
+app.config['FLASKY_MAIL_SUBJECT_PREFIX']='[Flasky]'
+app.config['FLASKY_MAIL_SENDER']='Flasky Admin <jhontestse@gmail.com>'
+
+
+def send_async_email(app, msg):
+    with app.app_context():
+        mail.send(msg)
+
+
+def send_email(to, subject, template, **kwargs):
+    msg = Message(app.config['FLASKY_MAIL_SUBJECT_PREFIX'] + subject, sender=app.config['FLASKY_MAIL_SENDER'], recipients=[to])
+msg.body = render_template(template + '.txt', **kwargs)
+msg.html = render_template(template + '.html', **kwargs)
+thr = Thread(target=send_async_email, args=[app, msg])
+thr.start()
+
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+mail = Mail(app)
 
-
+ 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = NameForm()
@@ -36,6 +59,9 @@ def index():
             db.session.add(user)
             db.session.commit()
             session['known'] = False
+            if app.config['FLASKY ADMIN']:
+                send_email(app.config['FLASKY_ADMIN'], 'New User',
+                            'mail/new/user', user=user)
         else:
             session['known'] = True
         session['name'] = form.name.data
@@ -55,6 +81,7 @@ def user(name):
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
 
 #DB Models
 class Role(db.Model):
