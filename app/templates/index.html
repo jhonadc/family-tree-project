@@ -4,21 +4,114 @@
 
 {% block page_content %}
 <!-- <h4>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h4> -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+
+.container {
+width: 100vw;
+padding-top: 0;
+}
+.navbar-text {
+    color: white;
+}
+
+.intro-text {
+height: 34%;
+text-align: center;
+}
+
+.text-primary {
+    color: white;
+    padding-bottom: 20px;
+    font-family: nebula;
+}
+
+.lead {
+    font-family: 'EB Garamond', serif;
+    color: gray;
+    font-size: 2.3em;
+}
+
+.btn {
+font-weight:bold;
+transition: all 0.5s;
+cursor: pointer;
+background-color: blue;
+color: white;
+}
+
+.btn span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+background-color: blue;
+color: white;
+}
+
+.btn span:after {
+background-color: blue;
+color: white;
+content: '\00bb';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.btn:hover span {
+padding-right: 25px;
+}
+
+.btn:hover span:after {
+opacity: 1;
+right: 0;
+
+}
+
+body {
+    background-color: black;
+}
+.image-container {
+background: url('./static/images/index_image.jpg') no-repeat
+center center/cover;
+height: 60vh;
+width: 100%;
+}
+
+
+/* Footer */
+#main-footer {
+text-align: center;
+background: #444;
+color: gray;
+padding: 1px;
+}
+</style>
+
+
 <main>
-<div class="presentation">
-    <h4>Share with your family your thoughts, images and memories</h4>
-    <h2>FOR GENERATIONS</h2>
-    <button type="button">Start now</button>
+
+<div class="intro-text">
+    <h1 class='lead'>Share with your family your thoughts, images and memories...</h1>
+    <h1><span class='text-primary'>FOR GENERATIONS</h1>
+        <br>
+    <a class='btn' href="{{ url_for('auth.register') }}"><span>Start Now</span></a>
+
 </div>
 
-
-<div class="bottom images">
-
+<div class="image-container">
+    <h1></h1>
 </div>
 
 </main>
 
-<footer>
-    <h6>Developed by @Jhonathan - 2021</h6>
+
+<footer id="main-footer">
+    <p>Family Tree - 2021 - @Jhonathan - All Rights Reserved</p>
 </footer>
+
+
 {% endblock %}
