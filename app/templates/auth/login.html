@@ -1,10 +1,24 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}Flasky - Login{% endblock %}
+{% block title %}Family Tree - Login{% endblock %}
 
 {% block page_content %}
-<div class="page-header">
+<style>
+
+body{  font-family: 'Raleway';
+        background-color: #344a72;
+        line-height: 1.8em;
+        color: white;
+        align-content: center;
+}
+
+
+</style>
+
+
+<main>
+    <div class="page-header">
     <h1>Login</h1>
 </div>
 <div class="col-md-4">
@@ -13,4 +27,6 @@
     <p>Forgot your password? <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>.</p>
     <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
 </div>
+</main>
+
 {% endblock %}

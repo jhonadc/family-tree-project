@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Family Tree - Learn{% endblock %}
+
+{% block page_content %}
+<!-- <h4>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h4> -->
+  
+
+<style>
+
+  main {
+    border: 4px solid white;
+    padding: 50px;
+  }
+
+
+h1, h2, h3, p {
+  
+  padding-bottom: 6px;
+
+}
+
+body {
+background-color: darkblue;
+color: white;
+text-align: justify;
+line-height: 1.6em;
+font-size: 1.5em
+}
+
+</style>
+
+
+<main>
+  <h1> THE FAMILY TREE PROJECT DOCUMENTATION</h1>
+
+<H3>Document Index:</H3>
+
+<ul>
+<li>-About</li>
+<li>-Technology</li>
+<li>-Updates</li>
+    <li>--version 0.1--</li>
+    <li>sign-in</li>
+    <li>sign-up</li>
+    <li>settings</li>
+    <li>add family member</li>
+    <li>insert memory</li>
+    <li>delete memory</li>
+</ul>
+
+<h3>Introduction</h3>
+
+<h3>- About</h3>
+
+<p>This project aims to enable family members to safely share, via the internet and cloud storage, digitalized memories
+(photos, texts, small videos) with other family members for generations to come, in a easy to use interface.</p>
+
+<h3>- Technology</h3>
+
+<p>The software is being developed using Flask, a Python framework to develop web applications. HTML, CSS and JavaScript
+are also used for the front-end part of the website, while NOsql databases are connected to the framework to store all
+required data.</p>
+
+<p>For the most future proof data possible, the simpler data format will be used for storage, allowing easier change in the
+database in case of migration of technology used. For texts, UTF-8 format will be applied; for photograph, .jpg and, for
+audio, xxx format will apply.</p>
+
+<h3>- Updates</h3>
+
+<li>Version 0.1 (04.04.2021):</li>
+<li>Definition of the technology.</li>
+<li>File structure created.</li>
+<li>Git repository was created.</li>
+<li>The main page template was created with the upper nav bar.</li>
+<li>The sign in page was created.</li>
+<li>The sign up form was created.</li>
+<li></li>
+
+
+<h4>-sign up</h4>
+<p>The user must access the project webpage on xxxx.com. There, he must choose the option “Sign Up”, insert the necessary
+data to create a profile and choose the payment form.</p>
+<h4>-sign in</h4>
+<p>If there is already an user registered, the consumer have to click on the “Sign In” option and right his email and
+password to access his main family tree and/or configuration.</p>
+
+<h3>How to Use</h3>
+
+<h4>-settings</h4>
+<p>The user can click on “settings” on the upper right side of the screen to change his username, profile picture,
+background color, payment data and personal data. Click save to go back to the settings page.</p>
+<h4>-add family member</h4>
+<p>To start creating a family tree, the user must access “My family tree” on the upper menu or click the same option on the
+dashboard, after logging in. There will be at least one node at the tree, which is the user node. To create another one,
+the user must click on one of the many transparent nodes around his node, which can be his grandparents, son, brothers,
+spouse and many others.</p>
+<h4>-insert memory</h4>
+<p>At the “My family tree” page, the user must click on his node and chose the pop up option “Add Album” or “Edit Album”.
+After inserting the name of the folder and uploading the pictures, the user can now choose to what family members that
+specific date will be shared, among his family members. Also, he can delegate rights to edit the album to some family
+members.</p>
+<h4>-delete memory</h4>
+<p>At the “My family tree” page, the user must click on his node and chose the pop-up option “Add Album” or “Edit Album”.</p>
+<h4>-filter memories</h4>
+<p>The user can filter memories by year, parenthood and data. In the image bellow, we can see all the data from the year
+1930 provided to the user from all his relatives. To filter, select the filter option at the main user board.
+</p>
+<h3>Contact</h3>
+
+<p>Get in touch with us: jhonathanaugusto@gmail.com</p>
+
+
+</main>
+
+{% endblock %}
