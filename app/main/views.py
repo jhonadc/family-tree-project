@@ -15,3 +15,13 @@ def learn():
 @main.route('/discover.html')
 def discover():
     return render_template('discover.html')
+
+
+@main.route('/dashboard.html')
+def dashboard():
+    return render_template('dashboard.html')
+
+
+@main.route('/albuns.html')
+def albuns():
+    return render_template('albuns.html')
