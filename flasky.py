@@ -1,8 +1,11 @@
+from logging import StreamHandler
+import logging
 import os
 import click
-from flask_migrate import Migrate
+from flask_migrate import Migrate, upgrade
 from app import create_app, db
 from app.models import User, Role
+
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 migrate = Migrate(app, db)
@@ -23,3 +26,29 @@ def test(test_names):
     else:
         tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
+
+
+@classmethod
+def init_app(cls, app):
+    Config.init_app(app)
+    # email errors to the administrators
+    import logging
+    from logging.handlers import SMTPHandler
+    credentials = None
+    secure = None
+    if getattr(cls, 'MAIL_USERNAME', None) is not None:
+        credentials = (cls.MAIL_USERNAME, cls.MAIL_PASSWORD)
+        if getattr(cls, 'MAIL_USE_TLS', None):
+            secure = ()
+    mail_handler = SMTPHandler(
+        mailhost=(cls.MAIL_SERVER, cls.MAIL_PORT),
+        fromaddr=cls.FLASKY_MAIL_SENDER,
+        toaddrs=['jhontestse@gmail.com'],  # cls.FLASKY_ADMIN
+        subject=cls.FLASKY_MAIL_SUBJECT_PREFIX + ' Application Error',
+        credentials=credentials,
+        secure=secure)
+    mail_handler.setLevel(logging.ERROR)
+    app.logger.addHandler(mail_handler)
+
+
+#erased deploy - run locally flask db upgrade
