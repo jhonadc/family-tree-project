@@ -54,10 +54,6 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(email=form.email.data.lower(),
-                    firstname=form.firstname.data,
-                    lastname=form.lastname.data,
-                    location=form.location.data,
-                    about_me=form.about_me.data,
                     username=form.username.data,
                     password=form.password.data)
         db.session.add(user)
