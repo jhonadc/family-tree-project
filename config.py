@@ -43,6 +43,7 @@ class HerokuConfig(ProductionConfig):
     @classmethod
     def init_app(cls, app):
         ProductionConfig.init_app(app)
+        SSL_REDIRECT = True if os.environ.get('DYNO') else False
 
         # handle reverse proxy server headers
         from werkzeug.contrib.fixers import ProxyFix
@@ -54,6 +55,7 @@ class HerokuConfig(ProductionConfig):
         file_handler = StreamHandler()
         file_handler.setLevel(logging.INFO)
         app.logger.addHandler(file_handler)
+
 
 
 config = {
