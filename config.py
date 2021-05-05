@@ -1,4 +1,7 @@
 import os
+from os import environ
+import psycopg2
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -55,7 +58,6 @@ class HerokuConfig(ProductionConfig):
         file_handler = StreamHandler()
         file_handler.setLevel(logging.INFO)
         app.logger.addHandler(file_handler)
-
 
 
 config = {
