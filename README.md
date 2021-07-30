@@ -28,7 +28,7 @@ Clone this repository to your computer
 
 Choose (or create) a working directory on your own computer and change directory into it
 
-Clone this repository running git clone xxxxxxxxxxxxx in that working directory.
+Clone this repository running git clone https://github.com/jhonadc/family-tree-project.git in that working directory.
 
 Get Set Up for Local Development:
 Change directory to the recently cloned folder. 
