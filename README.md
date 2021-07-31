@@ -12,6 +12,7 @@ INDEX
       add family member
       insert memory
       delete memory
+ - FLASK MVC PATTERN
 
 
 ---YOU CAN ACCESS THE WEBSITE WITH THE URL https://morning-forest-34963.herokuapp.com/ ---
@@ -95,6 +96,9 @@ At the “My family tree” page, the user must click on his node and chose the 
 
 -filter memories
 The user can filter memories by year, parenthood and data. In the image bellow, we can see all the data from the year 1930 provided to the user from all his relatives. To filter, select the filter option at the main user board.
+
+-- FLASK MVC SOFTWARE PATTERN --
+![alt text](https://github.com/jhonadc/family-tree-project/blob/main/FLASK%20-%20MCV%20SOFT%20ARCHITECTURE%20(1).jpg?raw=true)
 
 Contact
 
