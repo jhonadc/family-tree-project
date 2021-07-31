@@ -98,7 +98,7 @@ At the “My family tree” page, the user must click on his node and chose the 
 The user can filter memories by year, parenthood and data. In the image bellow, we can see all the data from the year 1930 provided to the user from all his relatives. To filter, select the filter option at the main user board.
 
 -- FLASK MVC SOFTWARE PATTERN --
-![alt text](https://github.com/jhonadc/family-tree-project/blob/main/FLASK%20-%20MCV%20SOFT%20ARCHITECTURE%20(1).jpg?raw=true)
+![alt text](https://github.com/jhonadc/family-tree-project/blob/main/MVC%20soft%20pattern%20FLASK.png?raw=true)
 
 Contact
 
