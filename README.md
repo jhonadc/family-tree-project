@@ -1,7 +1,10 @@
+This project aims to enable family members to safely share, via the internet and cloud storage, digitalized memories (photos, texts, small videos) with other family members for generations to come, in a easy to use interface.
+
 INDEX
-- URL
+- PART 0 - WEBSITE URL
 - PART I - INSTALLATION INSTRUCTIONS
-- PART II - PROJECT DOCUMENTATION
+- PART II - TECHNICAL INFORMATION AND FLASK MVC PATTERN
+- PART III - PROJECT DOCUMENTATION
   -About
   -Technology
   -Updates
@@ -12,26 +15,29 @@ INDEX
       add family member
       insert memory
       delete memory
- - FLASK MVC PATTERN
+- WHATS NEXT?
+- CONTACT
 
+----- PART 0 -----
 
 ---YOU CAN ACCESS THE WEBSITE WITH THE URL https://morning-forest-34963.herokuapp.com/ ---
 
 
-PART I
---- Installation Instructions ---
+----- PART I -----
+
+INSTALLATION INSTRUCTIONS 
 
 Before you start, you should have Python 3.8.x installed on your computer.
 
 
-Cloning this Repo
-Clone this repository to your computer
+- Cloning this Repo
 
-Choose (or create) a working directory on your own computer and change directory into it
+Choose (or create) a working directory on your own computer and change directory into it.
 
 Clone this repository running git clone https://github.com/jhonadc/family-tree-project.git in that working directory.
 
 Get Set Up for Local Development:
+
 Change directory to the recently cloned folder. 
 
 Open tbe terminal and create a new virtual environment (e.g. 'venv') for this project:
@@ -45,6 +51,7 @@ Download the Python modules listed in requirements.txt using pip:
 pip install -r requirements.txt
 
 Run the Flask App:
+
 You are all set to run the app. Make sure the your virtual environment is actived and be sure to be in the root folder.
 
 Run flask using:
@@ -53,12 +60,28 @@ flask run
 
 All done! You can access the flask app in your browser either on http://127.0.0.1:8000/ or http://localhost:8000
 
+----- PART II -----
 
-PART II
+This project was used usign Flask, a Python framework to develop web applications, HTML and CSS for the front-end of the website. 
+
+The database used is SQL, and it is connected to the framework using SQL ALCHEMY to store and retrieve the data.
+
+The database was converted to PostgreSQL when the files were uploaded to HEROKU.
+
+The timeline followed the Foundations class weekly tasks and provided resources. Additionally, youtube Crash Courses on SQL (Traversy Media Channel) and Flask were watched and, later, the book Building Web Applications with Flask, by Michel Grinberg - Oreilly was very useful as well. 
+
+The Flask MVC Software Pattern is as follows: 
+
+![alt text](https://github.com/jhonadc/family-tree-project/blob/main/MVC%20soft%20pattern%20FLASK.png?raw=true)
+
+
+
+----- PART III -----
 
 --- THE FAMILY TREE PROJECT DOCUMENTATION ---
 
 INTRODUCTION
+
 - About
 This project aims to enable family members to safely share, via the internet and cloud storage, digitalized memories (photos, texts, small videos) with other family members for generations to come, in a easy to use interface.
 
@@ -97,9 +120,10 @@ At the “My family tree” page, the user must click on his node and chose the 
 -filter memories
 The user can filter memories by year, parenthood and data. In the image bellow, we can see all the data from the year 1930 provided to the user from all his relatives. To filter, select the filter option at the main user board.
 
--- FLASK MVC SOFTWARE PATTERN --
-![alt text](https://github.com/jhonadc/family-tree-project/blob/main/MVC%20soft%20pattern%20FLASK.png?raw=true)
+----- WHATS NEXT ? -----
 
-Contact
+The dinamic family tree will be automatically generated using React, which will be learnt by the author on the second semester of 2001.
 
-Get in touch with us: jhonathanaugusto@gmail.com
+----- CONTACT -----
+
+Get in touch with me: jhonathanaugusto@gmail.com
