@@ -1,7 +1,7 @@
 This project aims to enable family members to safely share, via the internet and cloud storage, digitalized memories (photos, texts, small videos) with other family members for generations to come, in a easy to use interface.
 
 INDEX
-- PART 0 - WEBSITE URL
+- PART 0 - WEBSITE URL AND LOGIN DATA
 - PART I - INSTALLATION INSTRUCTIONS
 - PART II - TECHNICAL INFORMATION AND FLASK MVC PATTERN
 - PART III - PROJECT DOCUMENTATION
@@ -21,6 +21,10 @@ INDEX
 ----- PART 0 -----
 
 ---YOU CAN ACCESS THE WEBSITE WITH THE URL https://morning-forest-34963.herokuapp.com/ ---
+TO TEST THE WEBSITE, YOU CAN LOG IN USING THE FOLLOWING DATA:
+
+USER: getarush@gmail.com
+PASSWORD: jhonny
 
 
 ----- PART I -----
